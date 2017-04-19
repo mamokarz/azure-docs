@@ -57,7 +57,7 @@ IoT Hub returns the following data, which the device uses to upload the file:
 ```json
 {
     "correlationId": "somecorrelationid",
-    "hostname": "contoso.azure-devices.net",
+    "hostName": "contoso.azure-devices.net",
     "containerName": "testcontainer",
     "blobName": "test-device1/image.jpg",
     "sasToken": "1234asdfSAStoken"
@@ -92,7 +92,7 @@ The following reference topics provide you with more information about uploading
 
 ## File upload notifications
 
-When a device uploads a file and notifies IoT Hub of upload completion, the service optionally generates a notification message that contains the name and storage location of the file.
+When a device uploads a file and notifies IoT Hub of upload completion, the IoT Hub optionally generates a notification message to the service, which contains the name and storage location of the file.
 
 As explained in [Endpoints][lnk-endpoints], IoT Hub delivers file upload notifications through a service-facing endpoint (**/messages/servicebound/fileuploadnotifications**) as messages. The receive semantics for file upload notifications are the same as for cloud-to-device messages and have the same [message lifecycle][lnk-lifecycle]. Each message retrieved from the file upload notification endpoint is a JSON record with the following properties:
 
